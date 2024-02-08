@@ -23,7 +23,7 @@ const TopMenu = () => {
         const url = window.URL.createObjectURL(new Blob([blob]));
         const link = document.createElement('a');
         link.href = url;
-        link.setAttribute('download', 'ganesh2.pdf'); // Change the downloaded file name if needed
+        link.setAttribute('download', 'myResume.pdf'); // Change the downloaded file name if needed
         document.body.appendChild(link);
         link.click();
         link.parentNode.removeChild(link);
