@@ -30,7 +30,7 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-        <Image src="/assets/11.png" width={400} height={400} alt="Ganesh" className="z-10" />
+        <Image src="/assets/111.png" width={400} height={400} alt="Ganesh" className="z-10" />
       </div>
 
       <ul className="bg-squares">
