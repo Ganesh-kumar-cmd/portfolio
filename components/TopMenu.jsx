@@ -17,7 +17,7 @@ const TopMenu = () => {
   const downloadCV = () => {
     setLoading(true);
 
-    fetch('/assets/ganesh.pdf') // Replace 'ganesh.pdf' with the actual filename
+    fetch('/assets/ats.pdf') // Replace 'ganesh.pdf' with the actual filename
       .then(response => response.blob())
       .then(blob => {
         const url = window.URL.createObjectURL(new Blob([blob]));

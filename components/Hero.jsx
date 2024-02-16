@@ -13,8 +13,7 @@ const Hero = () => {
             <span className="font-bold text-dark-red">Full Stack Developer</span>
             <h2>From Vellore</h2>
             <p className="mt-5 text-xl">
-            Passionate and dynamic full-stack developer with a proven track record of delivering high-quality solutions. Equally adept at problem-solving and tackling challenges head-on, I thrive in both front-end and back-end development environments. With proficiency in a variety of programming languages and frameworks, I bring creativity and innovation to every project I undertake. Eager to leverage my expertise in a collaborative and dynamic work environment, I am currently seeking new opportunities to contribute to innovative projects and drive impactful results.
-            </p>
+            As a highly skilled and passionate full-stack developer with a proven track record of delivering high-quality solutions, I am actively seeking new opportunities to contribute to innovative projects and drive impactful results in a collaborative and dynamic work environment. My expertise spans across various programming languages and frameworks, allowing me to adapt and excel in both front-end and back-end development environments.            </p>
           </div>
 
           <div className="flex gap-4 max-md:justify-center">
@@ -30,7 +29,7 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-        <Image src="/assets/111.png" width={400} height={400} alt="Ganesh" className="z-10" />
+        <Image src="/assets/901.png" width={500} height={500} alt="Ganesh" className="z-10" />
       </div>
 
       <ul className="bg-squares">

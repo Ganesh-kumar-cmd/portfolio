@@ -67,7 +67,7 @@ const SideMenu = () => {
       <section className={`side-menu border-r ${isOpen ? "max-lg:block" : "max-md:hidden"}`}>
         <div className="flex w-full flex-1 flex-col gap-10 justify-between items-center">
           <div className="flex justify-center items-center flex-col gap-2">
-            <Image src="/assets/11.png" width={100} height={100} alt="antonio" />
+            <Image src="/assets/901.png" width={100} height={100} alt="antonio" />
             <p className="font-bold text-dark-blue">Ganeshkumar</p>
           </div>
 

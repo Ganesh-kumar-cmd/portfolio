@@ -45,9 +45,9 @@ export const projects = [
     githubUrl: "https://github.com/Ganesh-kumar-cmd/portfolio",
     image: "../../assets/portfolio.png",
     youtube: true,
-    projectUrl: "",
+    projectUrl: "https://portfolio-six-mauve-49.vercel.app/",
     category: ["next"],
-    deployed: ""
+    deployed: true
   },
   {
     name: "Youtube-Clone-2",
