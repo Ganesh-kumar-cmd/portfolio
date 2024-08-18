@@ -102,5 +102,36 @@ export const projects = [
     youtube: true,
     category: ["script"],
 
+  },
+  {
+    name: "Polling-WebApp",
+    githubUrl: "https://github.com/Ganesh-kumar-cmd/FullStack_Polling_App",
+    image: "",
+    youtube: true,
+    youtubeUrl: "",
+    projectUrl: "",
+    category: ["java"]
+  
+
+  },
+  {
+    name: "Hotel_Reservation_WebApp",
+    githubUrl: "https://github.com/Ganesh-kumar-cmd/FullStack_HotelReservation_System",
+    image: "",
+    youtube: true,
+    youtubeUrl: "",
+    projectUrl: "",
+    category: ["java"]
+
+  },
+  {
+    name: "Project_Management_System",
+    githubUrl: "https://github.com/Ganesh-kumar-cmd/FullStack-ProjectManagement-System",
+    image: "",
+    youtube: true,
+    youtubeUrl: "",
+    projectUrl: "",
+    category: ["java"]
+
   }
 ]

@@ -8,28 +8,33 @@ const Hero = () => {
     <section className ="hero-container">
       <div className="hero-content-container">
         <div className="max-md:order-2 flex flex-col gap-5 z-40">
-          <div className="text-4xl lg:text-6xl">
-            <h1>Hi, I'm Ganesh </h1>
-            <span className="font-bold text-dark-red">Full Stack Developer</span>
-            <h2>From Vellore</h2>
-            <p className="mt-5 text-xl">
-            As a highly skilled and passionate full-stack developer with a proven track record of delivering high-quality solutions, I am actively seeking new opportunities to contribute to innovative projects and drive impactful results in a collaborative and dynamic work environment. My expertise spans across various programming languages and frameworks, allowing me to adapt and excel in both front-end and back-end development environments.            </p>
+        <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5">
+            <h1 className="leading-tight animate-fade-in-up">
+              Hi, I'm <span className="text-dark-red">Ganesh</span>
+            </h1>
+            <h2 className="text-gray-800 mt-2 animate-fade-in-up animation-delay-200">
+              <span className="text-shadow-md">Developer</span> From Vellore
+            </h2>
+            <p className="mt-5 text-lg md:text-xl text-gray-600 animate-fade-in-up animation-delay-400">
+              Full Stack Developer. Coffee-fueled coder. Pizza-powered problem solver. Embracing new tech with a smile.
+            </p>
           </div>
 
-          <div className="flex gap-4 max-md:justify-center">
+          <div className="flex justify-center md:justify-start gap-4 mt-8 animate-fade-in-up animation-delay-600">
             <Link href="#projects">
-              <button className="bg-dark-blue text-white px-2 lg:px-4 py-1 rounded-md hover:bg-dark-blue/75 cursor-pointer">
-                Projects
+              <button className="bg-transparent border-2 border-red-600 text-dark-red font-bold px-6 py-3 rounded-md hover:bg-dark-red hover:text-white transition transform hover:-translate-y-1 duration-300 shadow-lg hover:shadow-2xl">
+                View Projects
               </button>
             </Link>
             <Link href="#contact">
-              <button className="bg-dark-blue text-white px-2 lg:px-4 py-1 rounded-md hover:bg-dark-blue/75 cursor-pointer">
+              <button className="bg-transparent border-2 border-red-600 text-dark-red font-bold px-6 py-3 rounded-md hover:bg-dark-red hover:text-white transition transform hover:-translate-y-1 duration-300 shadow-lg hover:shadow-2xl">
                 Let's Talk
               </button>
             </Link>
           </div>
         </div>
-        <Image src="/assets/901.png" width={500} height={500} alt="Ganesh" className="z-10" />
+        <Image src="/assets/901.png" width={500} height={500} alt="Ganesh" 
+        className="z-10 rounded-full shadow-lg " />
       </div>
 
       <ul className="bg-squares">

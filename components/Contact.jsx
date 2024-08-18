@@ -6,7 +6,6 @@ import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 
 const Contact = () => {
-  const ref = useRef(null);
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -21,10 +20,12 @@ const Contact = () => {
         console.log(error.text);
       });
   };
+
   return (
-    <div className="w-full h-fit px-[40px]  py-20 md:py-20 max-xs:px-[20px] relative bg-light-bg" id="contact">
+    <div className="w-full h-fit px-[40px] py-20 md:py-20 max-xs:px-[20px] relative bg-white" id="contact">
       <div className="max-w-[1250px] mx-auto">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
+          {/* Contact Info Section */}
           <div>
             <div className="inline-block">
               <p className="section-title mb-10">
@@ -37,11 +38,11 @@ const Contact = () => {
               </p>
             </div>
             <p className="text-dark-blue">
-            Feel free to reach out. I'm always open for new opportunities and projects.
+              Feel free to reach out. I'm always open to new opportunities and projects.
             </p>
             <p className="text-dark-blue mt-12">Email Me!</p>
             <h4>
-              <a href="#" className="text-lg font-semibold text-dark-blue">
+              <a href="mailto:ganesh2070784@gmail.com" className="text-lg font-semibold text-dark-blue hover:underline">
                 ganesh2070784@gmail.com
               </a>
             </h4>
@@ -49,19 +50,39 @@ const Contact = () => {
               <div className="flex flex-col gap-2">
                 <h5 className="text-dark-blue">Socials</h5>
                 <div className="flex gap-5">
-                  <a href="#" className="text-3xl text-dark-blue">
+                  <a
+                    href="https://github.com/Ganesh-kumar-cmd"
+                    className="text-3xl text-dark-blue hover:text-dark-red transition-all duration-300 transform hover:scale-110"
+                    aria-label="GitHub"
+                  >
                     <AiFillGithub />
                   </a>
-                  <a href="#" className="text-3xl text-dark-blue">
+                  <a
+                    href="#"
+                    className="text-3xl text-dark-blue hover:text-dark-red transition-all duration-300 transform hover:scale-110"
+                    aria-label="LinkedIn"
+                  >
                     <AiFillLinkedin />
                   </a>
-                  <a href="#" className="text-3xl text-dark-blue">
+                  <a
+                    href="#"
+                    className="text-3xl text-dark-blue hover:text-dark-red transition-all duration-300 transform hover:scale-110"
+                    aria-label="Instagram"
+                  >
                     <AiFillInstagram />
                   </a>
-                  <a href="#" className="text-3xl text-dark-blue">
+                  <a
+                    href="#"
+                    className="text-3xl text-dark-blue hover:text-dark-red transition-all duration-300 transform hover:scale-110"
+                    aria-label="Twitter"
+                  >
                     <AiFillTwitterSquare />
                   </a>
-                  <a href="#" className="text-3xl text-dark-blue">
+                  <a
+                    href="#"
+                    className="text-3xl text-dark-blue hover:text-dark-red transition-all duration-300 transform hover:scale-110"
+                    aria-label="Dev"
+                  >
                     <FaDev />
                   </a>
                 </div>
@@ -69,33 +90,38 @@ const Contact = () => {
             </div>
           </div>
 
+          {/* Contact Form Section */}
           <div>
             <form onSubmit={sendEmail} ref={form} className="w-full">
-              <div>
+              <div className="grid grid-cols-1 gap-6">
+                {/* Name Input */}
                 <input
                   type="text"
                   id="name"
                   name="name"
                   placeholder="Your name"
-                  className="w-full text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:outline-dark-red"
+                  className="w-full text-gray-700 bg-gray-100 border border-slate-300 rounded-xl py-3 px-5 mb-4 leading-tight shadow-lg hover:shadow-xl focus:outline-none focus:border-dark-white focus:ring-2 focus:ring-dark-white transition-all duration-300 transform hover:scale-105"
                 />
+                {/* Email Input */}
                 <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="Your email"
                   autoComplete="email"
-                  className="w-full text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:outline-dark-red"
+                  className="w-full text-gray-700 bg-gray-100 border border-slate-300 rounded-xl py-3 px-5 mb-4 leading-tight shadow-lg hover:shadow-xl focus:outline-none focus:border-dark-white focus:ring-2 focus:ring-dark-white transition-all duration-300 transform hover:scale-105"
                 />
+                {/* Subject Input */}
                 <input
                   type="text"
                   id="subject"
                   name="subject"
                   placeholder="Subject"
-                  className="w-full text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:outline-dark-red"
+                  className="w-full text-gray-700 bg-gray-100 border border-slate-300 rounded-xl py-3 px-5 mb-4 leading-tight shadow-lg hover:shadow-xl focus:outline-none focus:border-dark-white focus:ring-2 focus:ring-dark-white transition-all duration-300 transform hover:scale-105"
                 />
+                {/* Message Textarea */}
                 <textarea
-                  className="w-full text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:outline-dark-red"
+                  className="w-full text-gray-700 bg-gray-100 border border-slate-300 rounded-xl py-3 px-5 mb-4 leading-tight shadow-lg hover:shadow-xl focus:outline-none focus:border-dark-white focus:ring-2 focus:ring-dark-white transition-all duration-300 transform hover:scale-105"
                   id="message"
                   name="message"
                   rows="7"
@@ -104,9 +130,10 @@ const Contact = () => {
                 />
               </div>
               <div className="flex justify-end">
+                {/* Submit Button */}
                 <button
                   type="submit"
-                  className="py-3 px-6 font-semibold text-white bg-dark-red hover:shadow-lg hover:bg-dark-red/75 transition-all duration-500 rounded"
+                  className="py-3 px-8 font-semibold text-white bg-gradient-to-r from-dark-red to-red-600 hover:from-red-600 hover:to-dark-red rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-500"
                 >
                   Submit
                 </button>

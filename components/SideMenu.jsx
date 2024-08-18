@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { BsYoutube } from "react-icons/bs";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { FaDev } from "react-icons/fa";
 import { useMenuStore } from "@/store/useMenuStore";
@@ -12,6 +11,7 @@ import { sidebarMenuLinks } from "@/constants";
 const SideMenu = () => {
   const pathname = usePathname();
   const [activeLink, setActiveLink] = useState(sidebarMenuLinks[0]);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { isOpen, closeMobileMenu } = useMenuStore();
 
   const handleLinkClick = (link) => {
@@ -20,9 +20,18 @@ const SideMenu = () => {
   };
 
   const handleScroll = () => {
-    const sections = sidebarMenuLinks.map((link) => document.getElementById(link.sectionId));
-
     const scrollPosition = window.scrollY;
+
+    // Change text color based on scroll position
+    if (scrollPosition > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+
+    const sections = sidebarMenuLinks.map((link) =>
+      document.getElementById(link.sectionId)
+    );
 
     for (let i = sections.length - 1; i >= 0; i--) {
       const section = sections[i];
@@ -47,7 +56,9 @@ const SideMenu = () => {
     const cleanedPathname = pathname.replace(/^#/, "");
 
     const matchedLink = sidebarMenuLinks.find(
-      (link) => cleanedPathname === link.route || (link.route === "/" && cleanedPathname === "")
+      (link) =>
+        cleanedPathname === link.route ||
+        (link.route === "/" && cleanedPathname === "")
     );
     if (matchedLink) {
       setActiveLink(matchedLink);
@@ -63,50 +74,74 @@ const SideMenu = () => {
   }, [isOpen]);
 
   return (
-    <>
-      <section className={`side-menu border-r ${isOpen ? "max-lg:block" : "max-md:hidden"}`}>
-        <div className="flex w-full flex-1 flex-col gap-10 justify-between items-center">
-          <div className="flex justify-center items-center flex-col gap-2">
-            <Image src="/assets/901.png" width={100} height={100} alt="antonio" />
-            <p className="font-bold text-dark-blue">Ganeshkumar</p>
-          </div>
-
-          <div>
-            {sidebarMenuLinks.map((link) => {
-              const isActive = activeLink === link;
-
-              return (
-                <a
-                  href={`${link.route}`}
-                  key={link.label}
-                  className={`relative flex justify-center items-center rounded-lg p-3 ${
-                    isActive ? "bg-dark-red text-white" : ""
-                  }`}
-                  onClick={() => handleLinkClick(link)}
-                >
-                  <p>{link.label}</p>
-                </a>
-              );
-            })}
-          </div>
-          <div className="flex items-center flex-col justify-center text-center">
-            <div className="flex flex-col lg:flex-row items-center gap-4 mb-3">
-              
-              <a href="/" target="_blank" className="social-icon text-white">
-                <AiFillLinkedin />
-              </a>
-              <a href="https://github.com/Ganesh-kumar-cmd" target="_blank" className="social-icon text-white">
-                <AiFillGithub />
-              </a>
-              <a href="/" target="_blank" className="social-icon text-white">
-                <FaDev />
-              </a>
-            </div>
-            <p className="max-lg:hidden">Copyright © 2024 GaneshKumar. All rights reserved.</p>
-          </div>
+    <aside
+      className={`side-menu bg-white border-r border-gray-300 ${
+        isOpen ? "max-lg:block" : "max-md:hidden"
+      }`}
+    >
+      <div className="flex flex-col items-center justify-between h-full p-6">
+        <div className="flex flex-col items-center gap-4">
+          <Image
+            src="/assets/901.png"
+            width={100}
+            height={100}
+            alt="antonio"
+            className="rounded-full shadow-md"
+          />
+          <p className={`font-bold text-xl ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>Ganeshkumar</p>
         </div>
-      </section>
-    </>
+
+        <nav className="flex flex-col gap-3 mt-10">
+          {sidebarMenuLinks.map((link) => {
+            const isActive = activeLink === link;
+
+            return (
+              <a
+                href={`${link.route}`}
+                key={link.label}
+                className={`relative flex items-center justify-center rounded-lg px-4 py-2 transition-all duration-300 ${
+                  isActive
+                    ? "bg-dark-red text-white shadow-lg"
+                    : `${isScrolled ? 'text-gray-900' : 'text-gray-900'} hover:bg-red-400`
+                }`}
+                onClick={() => handleLinkClick(link)}
+              >
+                <span>{link.label}</span>
+              </a>
+            );
+          })}
+        </nav>
+
+        <div className="mt-auto text-center">
+          <div className="flex justify-center gap-4 mb-4 mt-5">
+            <a
+              href="/"
+              target="_blank"
+              className="text-3xl text-dark-blue hover:text-dark-red transition-all duration-300 transform hover:scale-110"
+            >
+              <AiFillLinkedin size={24} />
+            </a>
+            <a
+              href="https://github.com/Ganesh-kumar-cmd"
+              target="_blank"
+              className="text-3xl text-dark-blue hover:text-dark-red transition-all duration-300 transform hover:scale-110"
+            >
+              <AiFillGithub size={24} />
+            </a>
+            <a
+              href="/"
+              target="_blank"
+              className="text-3xl text-dark-blue hover:text-dark-red transition-all duration-300 transform hover:scale-110"
+            >
+              <FaDev size={24} />
+            </a>
+          </div>
+          <p className={`text-sm ${isScrolled ? 'text-gray-900' : 'text-gray-600'}`}>
+            © 2024 Ganeshkumar. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </aside>
   );
 };
 

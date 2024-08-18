@@ -2,7 +2,8 @@ import Image from "next/image";
 
 const Skills = () => {
   return (
-    <section className="w-full h-fit px-[40px] py-10 max-xs:px-[20px] relative bg-white" id="skills">
+    <>
+      <section className="w-full h-fit px-[40px] py-10 max-xs:px-[20px] relative bg-white" id="skills">
       <div className="max-w-[1250px] mx-auto">
         <div className="inline-block">
           <p className="section-title">
@@ -15,59 +16,36 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-5 grid-cols-2 max-xs:grid-cols-1 mt-10">
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/html.png" width={100} height={100} alt="html" className="mb-2" />
-            <span>HTML</span>
-          </div>
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/css1.png" width={100} height={100} alt="CSS" className="mb-2" />
-            <span>CSS</span>
-          </div>
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/js1.png" width={100} height={100} alt="javascript" className="mb-2" />
-            <span>Javascript</span>
-          </div>
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/git-13.png" width={100} height={100} alt="git" className="mb-2" />
-            <span>GIT</span>
-          </div>
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/R.png" width={100} height={100} alt="mongo" className="mb-2" />
-            <span>MongoDB</span>
-          </div>
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/ex.png" width={100} height={100} alt="mongo" className="mb-2" />
-            <span>Express.Js</span>
-          </div>
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/react.png" width={100} height={100} alt="react" className="mb-2" />
-            <span>React.Js</span>
-          </div>
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/node3.png" width={100} height={100} alt="node" className="mb-2" />
-            <span>Node.Js</span>
-          </div>
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/re.png" width={100} height={100} alt="git" className="mb-2" />
-            <span>Redux</span>
-          </div>
-          
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/python.png" width={100} height={100} alt="sql" className="mb-2" />
-            <span>Python</span>
-          </div>
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/dj4.png" width={100} height={100} alt="git" className="mb-2" />
-            <span>Django</span>
-          </div>
-          <div className="bg-light-bg p-8  rounded-md text-center flex flex-col items-center shadow-sm justify-center">
-            <Image src="/assets/sql.png" width={100} height={100} alt="git" className="mb-2" />
-            <span>MySql</span>
+          <div className="grid md:grid-cols-5 sm:grid-cols-3 gap-8 grid-cols-2 mt-8">
+            {[
+              { src: "/assets/java1.png", alt: "Java", label: "Java" },
+              //{ src: "/assets/mern1.png", alt: "Java", label: "" },
+              { src: "/assets/python.png", alt: "Python", label: "Python" },
+              { src: "/assets/js1.png", alt: "JavaScript", label: "JavaScript" },
+              { src: "/assets/sql.png", alt: "MySQL", label: "MySQL" },
+              { src: "/assets/spring3.png", alt: "Spring", label: "Spring" },
+              { src: "/assets/dj4.png", alt: "Django", label: "Django" },
+              { src: "/assets/react.png", alt: "React.js", label: "React.js" },
+              { src: "/assets/re.png", alt: "Redux", label: "Redux" },
+              { src: "/assets/html.png", alt: "HTML", label: "HTML" },
+              { src: "/assets/css1.png", alt: "CSS", label: "CSS" },
+              { src: "/assets/git-13.png", alt: "Git", label: "Git" },
+              { src: "/assets/R.png", alt: "MongoDB", label: "MongoDB" },
+              { src: "/assets/ex.png", alt: "Express.js", label: "Express.js" },
+              { src: "/assets/node3.png", alt: "Node.js", label: "Node.js" },
+              { src: "/assets/doc.png", alt: "Docker", label: "Docker" },
+            ].map((skill, index) => (
+              <div key={index} className="bg-light-bg p-6 rounded-lg text-center shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <Image src={skill.src} width={80} height={80} alt={skill.alt} className="mb-4 mx-auto" />
+                <span className="text-lg font-medium text-gray-700">{skill.label}</span>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      
+    </>
   );
 };
 
